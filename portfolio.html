@@ -1,41 +1,148 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta viewport="width=device-width, initial-scale=1.0">
-<title>แฟ้มสะสมงานของฉัน</title>
-<style>
-  * { 
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial,sans-serif;
-  }
-.container { max-width: 800px; margin: 0 auto; }
-.project-card { background: white; padding: 20px; margin: 20px 0; border-radius:
-8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: left; }
-.btn { display: inline-block; background: #2c3e50; color: white; padding: 10px
-20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #4f46e5;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        nav {
+            background: white;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 2px 8px #ddd;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #4f46e5;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 3px 12px #ddd;
+        }
+
+        h2 {
+            color: #4f46e5;
+            margin-bottom: 15px;
+        }
+
+        .project {
+            padding: 15px;
+            margin: 15px 0;
+            background: #f1f3ff;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            background: #222;
+            color: white;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
 </head>
+
 <body>
-<div class="container">
-<h1>
-📁 แฟ้มสะสมงาน (Portfolio)</h1>
-<p>นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจค่ะ</p>
-<!-- กล่องผลงานชิ้นที่ 1 -->
-<div class="project-card">
-<h3>1. โครงงาน/ชิ้นงานวิทยาศาสตร์คานวณ</h3>
-<p>รายละเอียดชิ้นงาน: เขียนอธิบายสั้นๆ ว่าทาอะไร ได้เรียนรู้อะไรจากงานนี้บ้าง</p>
-</div>
-<!-- กล่องผลงานชิ้นที่ 2 -->
-<div class="project-card">
-<h3>2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3>
-<p>รายละเอียดชิ้นงาน: เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน...</p>
-</div>
-<!-- ปุ่มกดกลับหน้าแรก -->
-<a href="index.html" class="btn">
-🔙 กลับหน้าแรก</a>
-</div>
+
+    <header>
+        <h1>สวัสดีครับ/ค่ะ 👋</h1>
+        <p>นี่คือ Portfolio ของฉัน</p>
+    </header>
+
+    <nav>
+        <a href="#about">เกี่ยวกับฉัน</a>
+        <a href="#skills">ทักษะ</a>
+        <a href="#projects">ผลงาน</a>
+        <a href="#contact">ติดต่อ</a>
+    </nav>
+
+    <section id="about">
+        <h2>เกี่ยวกับฉัน</h2>
+        <p>
+            สวัสดี ฉันชื่อ จิรัชญา เป็นนักเรียนที่สนใจด้านเทคโนโลยี
+            การออกแบบเว็บไซต์ และการเขียนโปรแกรม
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>ทักษะ</h2>
+        <p>💻 HTML</p>
+        <p>🎨 CSS</p>
+        <p>⚡ JavaScript</p>
+        <p>📱 การออกแบบเว็บไซต์</p>
+    </section>
+
+    <section id="projects">
+        <h2>ผลงานของฉัน</h2>
+
+        <div class="project">
+            <h3>📚 เว็บไซต์แนะนำตัว</h3>
+            <p>เว็บไซต์ Portfolio สำหรับรวบรวมประวัติและผลงาน</p>
+        </div>
+
+        <div class="project">
+            <h3>🎨 งานออกแบบ</h3>
+            <p>ผลงานการออกแบบสื่อและอินโฟกราฟิก</p>
+        </div>
+
+        <div class="project">
+            <h3>💻 งานเขียนโปรแกรม</h3>
+            <p>โปรเจกต์จากการเรียนเขียนโปรแกรม</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>ติดต่อฉัน</h2>
+        <p>📧 Email: example@gmail.com</p>
+        <p>📱 Instagram: @example</p>
+        <p>🐙 GitHub: github.com/username</p>
+    </section>
+
+    <footer>
+        <p>© 2026 My Portfolio</p>
+    </footer>
+
 </body>
 </html>
