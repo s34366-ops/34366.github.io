@@ -1,1 +1,294 @@
+<!DOCTYPE html>
+<html lang="th">
 
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Activities | Jinnipa Jairak</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Tahoma, sans-serif;
+      background: linear-gradient(135deg, #ffaa9c, #ffd6cf);
+      color: #333;
+    }
+
+    nav {
+      background: rgba(255,255,255,0.9);
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #2c3e50;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
+    }
+
+    .card {
+      background: white;
+      padding: 35px;
+      border-radius: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .project {
+      background: #fff0ed;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+    }
+
+    .project img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+        .activity-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 12px;
+      background: white;
+    }
+
+    .activity-images img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .activity-images .certificate {
+      object-fit: contain;
+      background: #f8f8f8;
+    }
+
+    @media (max-width: 600px) {
+      .activity-images {
+        grid-template-columns: 1fr;
+      }
+
+      .activity-images img {
+        height: auto;
+        max-height: 400px;
+      }
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    h2 {
+      color: #e76f61;
+    }
+
+    p {
+      line-height: 1.7;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #ffe3de;
+      padding: 8px 15px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2c3e50;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 30px;
+      margin: 25px 5px 0;
+    }
+
+    .btn:hover {
+      background: #e76f61;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <nav>
+
+    <a href="index.html">หน้าหลัก</a>
+    <a href="portfolio.html">เกี่ยวกับฉัน</a>
+    <a href="education.html">การศึกษา</a>
+    <a href="activities.html">ผลงาน</a>
+    <a href="skills.html">ทักษะ</a>
+    <a href="contact.html">ติดต่อ</a>
+
+  </nav>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h1>🎨 My Activities & Experiences</h1>
+
+      <div class="projects">
+
+        <!-- Project 1 -->
+
+        <div class="project">
+
+          <div class="activity-images">
+
+  <img
+    src="images/jin1.JPEG"
+    alt="รูปขณะทำกิจกรรมค่ายต้นกล้าส่องแสง"
+  >
+
+  <img
+    src="images/project1.PNG"
+    alt="เกียรติบัตรค่ายต้นกล้าส่องแสง"
+    class="certificate"
+  >
+
+</div>
+          <div class="project-content">
+
+            <h2>🔬 ต้นกล้าส่องแสง ครั้งที่ 7</h2>
+
+            <p>
+              ดิฉันมีโอกาสผ่านการคัดเลือกเข้าร่วม
+              <strong>ค่ายต้นกล้าส่องแสง ครั้งที่ 7</strong>
+              ของคณะเทคนิคการแพทย์ มหาวิทยาลัยมหิดล
+            </p>
+
+            <p>
+              การเข้าร่วมค่ายทำให้ดิฉันได้เรียนรู้
+              เกี่ยวกับคณะเทคนิคการแพทย์โดยตรง
+              และได้ทดลองทำกิจกรรมทางห้องปฏิบัติการ
+              รวมถึงกิจกรรมสอบแล็ปกริ๊ง
+            </p>
+
+            <p>
+              นอกจากนี้ยังได้พูดคุยและรับคำแนะนำ
+              จากรุ่นพี่ ทำให้ได้รับประสบการณ์
+              และมุมมองใหม่ ๆ ที่มีประโยชน์ต่อการวางแผนอนาคต
+            </p>
+
+            <span class="tag">Laboratory</span>
+            <span class="tag">Teamwork</span>
+            <span class="tag">Medical Technology</span>
+
+          </div>
+
+        </div>
+
+
+        <!-- Project 2 -->
+
+        <div class="project">
+
+          <div class="activity-images">
+
+  <img
+    src="images/jin2.HEIC"
+    alt="รูปขณะทำกิจกรรมที่โรงพยาบาลรามาธิบดี"
+  >
+
+  <img
+    src="images/project2.jpg"
+    alt="เกียรติบัตรโรงพยาบาลรามาธิบดี"
+    class="certificate"
+  >
+
+</div>
+          <div class="project-content">
+
+            <h2>🏥 ประสบการณ์ที่โรงพยาบาลรามาธิบดี</h2>
+
+            <p>
+              ดิฉันมีโอกาสเข้าร่วมกิจกรรม
+              และได้เรียนรู้ประสบการณ์การทำงาน
+              ภายในโรงพยาบาลรามาธิบดี
+            </p>
+
+            <p>
+              หน้าที่ที่ได้รับมอบหมาย ได้แก่
+              การวัดความดัน และการเดินส่งเอกสาร
+              ให้แก่บุคลากรทางการแพทย์
+            </p>
+
+            <p>
+              ประสบการณ์ครั้งนี้ทำให้ดิฉันได้เรียนรู้
+              สภาพแวดล้อมในการทำงานจริง
+              และได้เห็นการทำงานร่วมกัน
+              ของบุคลากรในโรงพยาบาล
+            </p>
+
+            <span class="tag">Communication</span>
+            <span class="tag">Attention to Detail</span>
+            <span class="tag">Patience</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="center">
+
+        <a href="education.html" class="btn">
+          ⬅ Back
+        </a>
+
+        <a href="skills.html" class="btn">
+          Next ➡
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
