@@ -1,1 +1,515 @@
+```html
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Activities | Jiratchaya Waiyakoon</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Tahoma, sans-serif;
+      background: linear-gradient(135deg, #9faa74, #4a6644);
+      color: #333;
+    }
+
+    nav {
+      background: rgba(255,255,255,0.9);
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #c66f80;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
+    }
+
+    .card {
+      background: white;
+      padding: 35px;
+      border-radius: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #c66f80;
+      text-align: center;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .project {
+      background: #ece3d2;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+    }
+
+    .project img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .work-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 12px;
+      background: white;
+    }
+
+    .work-images img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+
+      /* ทำให้รู้ว่ากดรูปได้ */
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .work-images img:hover {
+      transform: scale(1.03);
+    }
+
+    .work-images .certificate {
+      object-fit: contain;
+      background: #f8f8f8;
+    }
+
+    @media (max-width: 600px) {
+      .work-images {
+        grid-template-columns: 1fr;
+      }
+
+      .work-images img {
+        height: auto;
+        max-height: 400px;
+      }
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    h2 {
+      color: #c66f80;
+    }
+
+    p {
+      line-height: 1.7;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f4c7d0;
+      padding: 8px 15px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d7dab3;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 30px;
+      margin: 25px 5px 0;
+    }
+
+    .btn:hover {
+      background: #9faa74;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+
+    /* =====================================================
+       FULLSCREEN IMAGE
+    ===================================================== */
+
+    .image-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+
+      justify-content: center;
+      align-items: center;
+
+      padding: 20px;
+    }
+
+    /* รูปที่เปิดเต็มจอ */
+    .image-modal img {
+      max-width: 95%;
+      max-height: 90%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+    }
+
+    /* ปุ่ม X */
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 30px;
+
+      color: white;
+      font-size: 45px;
+      font-weight: bold;
+
+      cursor: pointer;
+      z-index: 10000;
+    }
+
+    .close:hover {
+      opacity: 0.7;
+    }
+
+
+    /* ปรับขนาดปุ่ม X บนมือถือ */
+    @media (max-width: 600px) {
+
+      .close {
+        top: 10px;
+        right: 20px;
+        font-size: 40px;
+      }
+
+      .image-modal {
+        padding: 10px;
+      }
+
+      .image-modal img {
+        max-width: 100%;
+        max-height: 85%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <nav>
+
+    <a href="index.html">หน้าหลัก</a>
+    <a href="education.html">เกี่ยวกับฉัน</a>
+    <a href="portfolio.html">ผลงาน</a>
+    <a href="contact.html">ติดต่อ</a>
+
+  </nav>
+
+
+  <div class="container">
+
+    <div class="card">
+
+      <h1>ผลงานของฉัน</h1>
+
+
+      <div class="projects">
+
+
+        <!-- =====================================================
+             PROJECT 1
+        ===================================================== -->
+
+        <div class="project">
+
+          <div class="work-images">
+
+            <img
+              src="IMG_2407.jpeg"
+              alt="รูปขณะทำกิจกรรม"
+            >
+
+            <img
+              src="IMG_2408.jpeg"
+              alt="เกียรติบัตรเข้าร่วมทำจิตอาสารามาธิบดี"
+              class="certificate"
+            >
+
+          </div>
+
+
+          <div class="project-content">
+
+            <h2>จิตอาสารามาธิบดี</h2>
+
+            <p>
+              ดิฉันได้ไปทำงานจิตอาสาที่โรงพยาบาลรามาธิบดีในช่วงปิดเทอม
+              โดยเข้าร่วมการทำจิตอาสาเป็นระยะเวลา 2 วันหรือ 16 ชั่วโมง
+            </p>
+
+            <p>
+              ในการทำจิตอาสาในครั้งนี้ วันแรกดิฉันได้รับมอบหมายไปทำงานในแผนกเวชศาสตร์ครอบครัว
+              โดยดิฉันมีหน้าที่ส่งเอกสารให้ห้องตรวจต่างๆในแผนกนี้
+              และวันที่สองดิฉันได้รับมอบหมายไปทำงานในห้องยา
+              ดิฉันมีหน้าที่บรรจุยาลงในถุงและรอให้คนไข้มารับยา
+            </p>
+
+            <p>
+              ซึ่งการเข้าร่วมทำจิตอาสาครั้งนี้ทำให้ดิฉันได้รับทักษะในการทำงานร่วมกับผู้อื่น
+              การแบ่งหน้าที่กันในการทำงาน
+              และเพิ่มทักษะการสื่อสารกับผู้อื่นค่ะ
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             PROJECT 2
+        ===================================================== -->
+
+        <div class="project">
+
+          <div class="work-images">
+
+            <img
+              src="IMG_2414.jpeg"
+              alt="รูปขณะทำกิจกรรมเข้าร่วมอบรมการกู้ชีพขั้นพื้นฐาน"
+            >
+
+            <img
+              src="IMG_2409.jpeg"
+              alt="เกียรติบัตรเข้าร่วมอบรมการกู้ชีพขั้นพื้นฐาน"
+              class="certificate"
+            >
+
+          </div>
+
+
+          <div class="project-content">
+
+            <h2>อบรมกู้ชีพขั้นพื้นฐาน</h2>
+
+            <p>
+              เป็นการอบรมการกู้ชีพขั้นพื้นฐาน
+              โดยมีการสอนการกู้ชีพผู้ป่วยที่หมดสติและการเคลื่อนย้ายผู้บาดเจ็บที่ติดอยู่
+              ในอาคารที่เกิดเหตุเพลิงไหม้
+              โดยมีการซ้อมอพยพจากสถานที่ที่เกิดอุบัติเหตุเพลิงไหม้
+              เพื่อให้สมมติเหตุการณ์และปฏิบัติในสิ่งที่ได้เรียนรู้มา
+            </p>
+
+            <p>
+              ซึ่งในการอบรมนี้ดิฉันได้รับความรู้ในการดูแลผู้ป่วยที่หมดสติจากการในวิธี CPR
+              และได้รับความรู้เกี่ยวกับวิธีการเคลื่อนย้ายผู้บาดเจ็บในวิธีที่ถูกต้อง
+              และได้รู้ทางหนีไฟที่ถูกต้องในอาคารเรียนที่เกิดเหตุเพลิงไหม้
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             PROJECT 3
+        ===================================================== -->
+
+        <div class="project">
+
+          <div class="work-images">
+
+            <img
+              src="IMG_2406.jpeg"
+              alt="รูปขณะทำกิจกรรมเข้าร่วม open house มหิดล"
+            >
+
+            <img
+              src="IMG_2410.jpeg"
+              alt="เกียรติบัตรเข้าร่วม open house มหิดล"
+              class="certificate"
+            >
+
+          </div>
+
+
+          <div class="project-content">
+
+            <h2>open house มหาวิทยาลัยมหิดล</h2>
+
+            <p>
+              ดิฉันได้มีโอกาสไปเข้าร่วมกิจกรรม open house ของมหาวิทยาลัยมหิดล
+              คณะกายภาพบำบัด
+              โดยในคณะนี้จะสอนการบำบัดร่างกายและสอนถึงระบบประสาทที่เกี่ยวข้องกับร่างกาย
+              รวมถึงกระดูกในร่างกายที่มีหน้าที่ต่างๆ
+            </p>
+
+            <p>
+              ซึ่งจากกิจกรรมนี้ดิฉันได้รับความรู้ของชื่อกระดูกต่างๆในร่างกาย
+              และได้เรียนรู้ระบบเส้นประสาทจากอาจารย์ใหญ่
+              และยังมีการสอนใช้อุปกรณ์ในการบำบัดร่างกายของผู้ที่ต้องบำบัด
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- ปุ่ม Back / Next -->
+
+      <div class="center">
+
+        <a href="education.html" class="btn">
+          ⬅ Back
+        </a>
+
+        <a href="contact.html" class="btn">
+          Next ➡
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       หน้าต่างแสดงรูปเต็มจอ
+  ===================================================== -->
+
+  <div id="imageModal" class="image-modal">
+
+    <span class="close">&times;</span>
+
+    <img
+      id="fullImage"
+      src=""
+      alt="รูปภาพเต็ม"
+    >
+
+  </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT สำหรับกดรูปดูเต็มจอ
+  ===================================================== -->
+
+  <script>
+
+    // เลือกรูปทั้งหมดในส่วนผลงาน
+    const images = document.querySelectorAll('.work-images img');
+
+    // หน้าต่างรูปเต็มจอ
+    const modal = document.getElementById('imageModal');
+
+    // รูปที่จะแสดงเต็มจอ
+    const fullImage = document.getElementById('fullImage');
+
+    // ปุ่ม X
+    const close = document.querySelector('.close');
+
+
+    // เมื่อกดรูป
+    images.forEach(img => {
+
+      img.addEventListener('click', function () {
+
+        modal.style.display = 'flex';
+
+        fullImage.src = this.src;
+
+        fullImage.alt = this.alt;
+
+      });
+
+    });
+
+
+    // เมื่อกดปุ่ม X
+    close.addEventListener('click', function () {
+
+      modal.style.display = 'none';
+
+      fullImage.src = '';
+
+    });
+
+
+    // เมื่อกดพื้นหลังสีดำ
+    modal.addEventListener('click', function (e) {
+
+      if (e.target === modal) {
+
+        modal.style.display = 'none';
+
+        fullImage.src = '';
+
+      }
+
+    });
+
+
+    // กดปุ่ม ESC เพื่อปิดรูป
+    document.addEventListener('keydown', function (e) {
+
+      if (e.key === 'Escape') {
+
+        modal.style.display = 'none';
+
+        fullImage.src = '';
+
+      }
+
+    });
+
+  </script>
+
+
+</body>
+
+</html>
+```
 
